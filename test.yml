@@ -1,0 +1,13 @@
+--- 
+ - name: Read Only check
+   hosts: 
+   remote_user: 
+   become: yes
+   tasks:
+   - name: creating file
+     lineinfile:
+	path: /etc/bashrc
+        line: HISTTIMEFORMAT="%d/%m/%y %T "
+
+   - name: activating bash changes
+     shell: source ~/.bashrc 
