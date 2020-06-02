@@ -1,0 +1,12 @@
+---
+
+- name: testing playbooks
+  hosts: kube
+  become: yes
+  tasks:
+          - name: Creating a file
+            file: 
+                path: /root/file1
+                state: touch
+
+
